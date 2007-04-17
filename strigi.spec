@@ -65,6 +65,9 @@ Here are the main features of Strigi:
 %{_bindir}/strigidaemon
 %{_bindir}/xmlindexer
 %{_bindir}/luceneindexer
+%_bindir/strigiclient
+%_bindir/strigicmd
+%_datadir/apps/strigi/fieldproperties/*.fieldproperties
 #--------------------------------------------------------------------
 
 %package -n %lib_name
@@ -85,6 +88,7 @@ Provides:       libstrigi
 %{_libdir}/libstreams.so.*
 %{_libdir}/libstrigihtmlgui.so.*
 %_libdir/libcluceneindex.so.*
+%_libdir/libstrigiqtdbusclient.so.*
 %_libdir/strigi/strigila_deb.so
 %_libdir/strigi/strigila_xpm.so
 %_libdir/strigi/strigita_au.so
@@ -107,11 +111,13 @@ Provides:       strigi-devel
 %{_libdir}/libstreams.so
 %{_libdir}/libstrigihtmlgui.so
 %_libdir/libcluceneindex.so
+%_libdir/libstrigiqtdbusclient.so
 
 %dir %_includedir/strigi/
 %_includedir/strigi/*.h
 %{_libdir}/libstrigihtmlgui.so
-
+%dir %_includedir/strigi/qtdbus/
+%_includedir/strigi/qtdbus/*.h
 #--------------------------------------------------------------------
 
 %prep
