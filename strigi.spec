@@ -20,7 +20,7 @@
 
 Name:          strigi
 Version:       0.3.11
-Release:       %mkrel 0.%{versiondate}.8
+Release:       %mkrel 0.%{versiondate}.9
 Epoch:		1
 Summary:       Desktop Search
 License:       GPL
