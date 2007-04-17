@@ -1,7 +1,7 @@
 %define lib_name_orig %mklibname %name
 %define lib_major 0
 %define lib_name %lib_name_orig%lib_major
-%define versiondate 20070406
+%define versiondate 20070417
 
 # remove it when kde4 will be official kde package
 %define _prefix /opt/kde4/
@@ -20,7 +20,7 @@
 
 Name:          strigi
 Version:       0.3.11
-Release:       %mkrel 0.%{versiondate}.9
+Release:       %mkrel 0.%{versiondate}.10
 Epoch:		1
 Summary:       Desktop Search
 License:       GPL
@@ -28,7 +28,7 @@ Group:         Graphical desktop/KDE
 Url:           http://www.vandenoever.info/software/strigi/
 Source:        %name-%version-%{versiondate}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
-BuildRequires: cmake >= 2.4.3
+BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
 BuildRequires: bzip2-devel
 BuildRequires: clucene-devel >= 0.9.16
