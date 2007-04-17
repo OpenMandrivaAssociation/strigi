@@ -65,7 +65,6 @@ Here are the main features of Strigi:
 %{_bindir}/strigidaemon
 %{_bindir}/xmlindexer
 %{_bindir}/luceneindexer
-%_datadir/apps/strigi/fieldproperties/ogg.fieldproperties
 #--------------------------------------------------------------------
 
 %package -n %lib_name
