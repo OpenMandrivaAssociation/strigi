@@ -108,7 +108,6 @@ Provides:       strigi-devel
 %{_libdir}/libstreams.so
 %{_libdir}/libstrigihtmlgui.so
 %_libdir/libcluceneindex.so
-%{_libdir}/strigi/strigita_magic.so
 
 %dir %_includedir/strigi/
 %_includedir/strigi/*.h
