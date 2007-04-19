@@ -98,7 +98,7 @@ Provides:       libstrigi
 
 %package  -n %lib_name-devel
 Requires:       %{lib_name} = %epoch:%{version}
-Summary:        %{oname} development files
+Summary:        Development files for %name
 Group:          Development/Other
 Provides:       strigi-devel
 
