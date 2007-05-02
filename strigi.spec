@@ -1,7 +1,7 @@
 %define lib_name_orig %mklibname %name
 %define lib_major 0
 %define lib_name %lib_name_orig%lib_major
-%define versiondate 20070417
+%define versiondate 20070502
 
 # remove it when kde4 will be official kde package
 %define _prefix /opt/kde4/
@@ -20,7 +20,7 @@
 
 Name:          strigi
 Version:       0.3.11
-Release:       %mkrel 0.%{versiondate}.10
+Release:       %mkrel 0.%{versiondate}.11
 Epoch:		1
 Summary:       Desktop Search
 License:       GPL
@@ -94,6 +94,8 @@ Provides:       libstrigi
 %_libdir/strigi/strigita_au.so
 %_libdir/strigi/strigita_pcx.so
 %_libdir/strigi/strigita_xbm.so
+%_libdir/strigi/strigila_cpp.so
+
 #--------------------------------------------------------------------
 
 %package  -n %lib_name-devel
@@ -118,6 +120,10 @@ Provides:       strigi-devel
 %{_libdir}/libstrigihtmlgui.so
 %dir %_includedir/strigi/qtdbus/
 %_includedir/strigi/qtdbus/*.h
+%_libdir/pkgconfig/libstreamanalyzer.pc
+%_libdir/pkgconfig/libstreams.pc
+
+
 #--------------------------------------------------------------------
 
 %prep
