@@ -19,9 +19,9 @@
 
 
 Name:          strigi
-Version:       0.3.11
-Release:       %mkrel 0.%{versiondate}.11
-Epoch:		1
+Version:       0.5.0
+Release:       %mkrel 0.%{versiondate}.1
+Epoch:	       1
 Summary:       Desktop Search
 License:       GPL
 Group:         Graphical desktop/KDE
@@ -36,7 +36,7 @@ BuildRequires: libmagic-devel
 BuildRequires: openssl-devel
 BuildRequires: expat-devel
 BuildRequires: attr-devel
-BuildRequires:	cppunit-devel
+BuildRequires: cppunit-devel
 
 %description
 Here are the main features of Strigi:
@@ -68,6 +68,7 @@ Here are the main features of Strigi:
 %_bindir/strigiclient
 %_bindir/strigicmd
 %_datadir/apps/strigi/fieldproperties/*.fieldproperties
+
 #--------------------------------------------------------------------
 
 %package -n %lib_name
@@ -150,9 +151,9 @@ cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
 
 %install
 rm -fr %buildroot
-cd $RPM_BUILD_DIR/%name-%version-%{versiondate}/build/
+cd %buildroot/%name-%version-%{versiondate}/build/
 
 make DESTDIR=%buildroot install
 
-
-
+%clean
+rm -fr %buildroot
