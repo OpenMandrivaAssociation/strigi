@@ -155,5 +155,3 @@ cd %buildroot/%name-%version-%{versiondate}/build/
 
 make DESTDIR=%buildroot install
 
-%clean
-rm -fr %buildroot
