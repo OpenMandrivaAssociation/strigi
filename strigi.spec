@@ -19,14 +19,14 @@
 
 
 Name:          strigi
-Version:       0.5.0
-Release:       %mkrel 0.%{versiondate}.1
+Version:       0.5.1
+Release:       %mkrel 1
 Epoch:	       1
 Summary:       Desktop Search
 License:       GPL
 Group:         Graphical desktop/KDE
 Url:           http://www.vandenoever.info/software/strigi/
-Source:        %name-%version-%{versiondate}.tar.bz2
+Source:        %name-%version.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -67,7 +67,7 @@ Here are the main features of Strigi:
 %{_bindir}/luceneindexer
 %_bindir/strigiclient
 %_bindir/strigicmd
-%_datadir/apps/strigi/fieldproperties/*.fieldproperties
+#%_datadir/apps/strigi/fieldproperties/*.fieldproperties
 
 #--------------------------------------------------------------------
 
@@ -128,11 +128,11 @@ Provides:       strigi-devel
 #--------------------------------------------------------------------
 
 %prep
-%setup -q  -n%name-%version-%{versiondate}
+%setup -q  -n%name-%version
 
 
 %build
-cd $RPM_BUILD_DIR/%name-%version-%{versiondate}
+cd $RPM_BUILD_DIR/%name-%version
 mkdir build
 cd build
 export QTDIR=/usr/lib/qt4/
@@ -150,8 +150,8 @@ cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
 %make
 
 %install
-rm -fr %buildroot
-cd %buildroot/%name-%version-%{versiondate}/build/
-
+cd $RPM_BUILD_DIR/%name-%version/build
 make DESTDIR=%buildroot install
 
+%clean
+rm -fr %buildroot
