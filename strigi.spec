@@ -67,7 +67,7 @@ Here are the main features of Strigi:
 %{_bindir}/luceneindexer
 %_bindir/strigiclient
 %_bindir/strigicmd
-#%_datadir/apps/strigi/fieldproperties/*.fieldproperties
+%_datadir/strigi/fieldproperties/*.fieldproperties
 
 #--------------------------------------------------------------------
 
