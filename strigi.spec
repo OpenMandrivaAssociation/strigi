@@ -68,7 +68,6 @@ Here are the main features of Strigi:
 %_bindir/strigiclient
 %_bindir/strigicmd
 %_datadir/strigi/fieldproperties/*.fieldproperties
-%_datadir/apps/strigi/fieldproperties/*.fieldproperties
 #--------------------------------------------------------------------
 
 %package -n %lib_name
