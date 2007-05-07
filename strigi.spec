@@ -1,7 +1,7 @@
 %define lib_name_orig %mklibname %name
 %define lib_major 0
 %define lib_name %lib_name_orig%lib_major
-%define versiondate 20070502
+%define versiondate 20070507
 
 # remove it when kde4 will be official kde package
 %define _prefix /opt/kde4/
@@ -26,7 +26,7 @@ Summary:       Desktop Search
 License:       GPL
 Group:         Graphical desktop/KDE
 Url:           http://www.vandenoever.info/software/strigi/
-Source:        %name-%version.tar.bz2
+Source:        %name-%version-%{versiondate}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -68,7 +68,7 @@ Here are the main features of Strigi:
 %_bindir/strigiclient
 %_bindir/strigicmd
 %_datadir/strigi/fieldproperties/*.fieldproperties
-
+%_datadir/apps/strigi/fieldproperties/*.fieldproperties
 #--------------------------------------------------------------------
 
 %package -n %lib_name
@@ -128,11 +128,11 @@ Provides:       strigi-devel
 #--------------------------------------------------------------------
 
 %prep
-%setup -q  -n%name-%version
+%setup -q  -n%name-%version-%{versiondate}
 
 
 %build
-cd $RPM_BUILD_DIR/%name-%version
+cd $RPM_BUILD_DIR/%name-%version-%{versiondate}
 mkdir build
 cd build
 export QTDIR=/usr/lib/qt4/
@@ -150,8 +150,10 @@ cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
 %make
 
 %install
-cd $RPM_BUILD_DIR/%name-%version/build
+cd $RPM_BUILD_DIR/%name-%version-%{versiondate}/build
 make DESTDIR=%buildroot install
 
 %clean
 rm -fr %buildroot
+
+
