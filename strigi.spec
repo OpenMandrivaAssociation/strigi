@@ -1,4 +1,4 @@
-%define versiondate 20070614
+%define versiondate 20070617
 
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
@@ -50,11 +50,26 @@ Here are the main features of Strigi:
 
 %files
 %defattr(-,root,root)
+%doc README
 %_bindir/*
 %dir %_libdir/strigi
 %_libdir/strigi/*
 %_datadir/strigi/*
 %_datadir/dbus-1/services/
+%exclude %_bindir/strigiclient
+
+#--------------------------------------------------------------------
+
+%package gui
+Summary: Strigi interface
+Group: Graphical desktop/Qt
+
+%description gui
+Strigi interface
+
+%files gui
+%defattr(-,root,root)
+%_bindir/strigiclient
 
 #--------------------------------------------------------------------
 
