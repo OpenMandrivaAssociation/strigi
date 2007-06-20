@@ -1,4 +1,4 @@
-%define versiondate 20070617
+%define versiondate 20070620
 
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
