@@ -62,7 +62,7 @@ Here are the main features of Strigi:
 
 %package gui
 Summary: Strigi interface
-Group: Graphical desktop/Qt
+Group: Graphical desktop/KDE
 
 %description gui
 Strigi interface
