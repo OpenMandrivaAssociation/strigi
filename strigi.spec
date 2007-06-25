@@ -1,4 +1,4 @@
-%define versiondate 20070620
+%define versiondate 20070624
 
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
@@ -9,7 +9,7 @@
 
 Name: strigi
 Version: 0.5.1
-Release: %mkrel 3 
+Release: %mkrel 4 
 Epoch: 1
 Summary: Desktop Search
 License: GPL
