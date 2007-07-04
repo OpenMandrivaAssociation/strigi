@@ -1,21 +1,23 @@
-%define versiondate 20070624
-
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
+
+%define branch 1
+%{?_branch: %{expand: %%global branch 1}}
+%define revision 682982
 
 %if %{unstable}
 %define dont_strip 1
 %endif
 
 Name: strigi
-Version: 0.5.1
-Release: %mkrel 4 
+Version: 0.5.2
+Release: %mkrel 0.%revision.1 
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://www.vandenoever.info/software/strigi/
-Source: %name-%version.%{versiondate}.tar.bz2
+Source: %name-%version.%{revision}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
