@@ -3,14 +3,14 @@
 
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
-%define revision 689230
+%define revision 693047
 
 %if %{unstable}
 %define dont_strip 1
 %endif
 
 Name: strigi
-Version: 0.5.3
+Version: 0.5.4
 Release: %mkrel 0.%revision.1 
 Epoch: 1
 Summary: Desktop Search
