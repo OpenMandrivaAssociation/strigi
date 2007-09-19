@@ -11,7 +11,7 @@
 
 Name: strigi
 Version: 0.5.5
-Release: %mkrel 1 
+Release: %mkrel 2 
 Epoch: 1
 Summary: Desktop Search
 License: GPL
@@ -80,7 +80,7 @@ Strigi interface
 %package -n %libsearchclient
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libsearchclient
 Strigi library.
@@ -99,7 +99,7 @@ Strigi library.
 %package -n %libstreamanalyzer
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstreamanalyzer
 Strigi library.
@@ -118,7 +118,7 @@ Strigi library.
 %package -n %libstreams
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstreams
 Strigi library.
@@ -137,7 +137,7 @@ Strigi library.
 %package -n %libstrigihtmlgui
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstrigihtmlgui
 Strigi library.
@@ -156,7 +156,7 @@ Strigi library.
 %package -n %libcluceneindex
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libcluceneindex
 Strigi library.
@@ -175,7 +175,7 @@ Strigi library.
 %package -n %libstrigiqtdbusclient
 Summary: Strigi library
 Group: System/Libraries
-Obsoletes: %{_lib}strigi0
+Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstrigiqtdbusclient
 Strigi library.
@@ -199,7 +199,7 @@ Requires: %libstreams
 Summary: Development files for %name
 Group:  Development/Other
 Provides: libstrigi-devel
-Obsoletes: %{_lib}strigi0-devel
+Obsoletes: %{_lib}strigi0-devel < 1:0.5.5-1mdv2008.0
 
 %description devel
 Development files for %name.
