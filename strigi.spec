@@ -1,7 +1,7 @@
 %define unstable 1
 %{?_unstable: %{expand: %%global unstable 1}}
 
-%define branch 1
+%define branch 0
 %{?_branch: %{expand: %%global branch 1}}
 %define revision 725465
 
@@ -10,25 +10,28 @@
 %endif
 
 Name: strigi
-Version: 0.5.6
-Release: %mkrel 0.%revision.1
+Version: 0.5.7
+Release: %mkrel 1
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://www.vandenoever.info/software/strigi/
-Source: %name-%version.%revision.tar.bz2
+Source: %name-%version.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
 BuildRequires: bzip2-devel
-BuildRequires: clucene-devel >= 0.9.16
+# fwang: in fact, recent strigi requires recent clucene, otherwise
+# it does not build
+BuildRequires: clucene-devel >= 0.9.20
 BuildRequires: libmagic-devel
 BuildRequires: openssl-devel
 BuildRequires: expat-devel
 BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
+BuildRequires: libexiv-devel
 
 %description
 Here are the main features of Strigi:
@@ -231,10 +234,12 @@ cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
 %endif
         ../
 
-%make
+%make VERBOSE=1
 
 %install
-cd build && make DESTDIR=%buildroot install
+cd build
+%makeinstall_std
+cd -
 
 %clean
 rm -fr %buildroot
