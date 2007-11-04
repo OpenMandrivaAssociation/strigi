@@ -32,7 +32,6 @@ BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
 BuildRequires: libexiv-devel
-Obsoletes: %libcluceneindex
 
 %description
 Here are the main features of Strigi:
