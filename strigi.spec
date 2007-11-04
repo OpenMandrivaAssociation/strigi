@@ -16,8 +16,8 @@ Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
-Url: http://www.vandenoever.info/software/strigi/
-Source: %name-%version.tar.bz2
+Url: http://strigi.sourceforge.net
+Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -32,6 +32,7 @@ BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
 BuildRequires: libexiv-devel
+Obsoletes: %libcluceneindex
 
 %description
 Here are the main features of Strigi:
@@ -169,7 +170,7 @@ Strigi library.
 
 %files -n %libcluceneindex
 %defattr(-,root,root)
-%{_libdir}/libcluceneindex.so.*
+#%{_libdir}/libcluceneindex.so.*
 
 #--------------------------------------------------------------------
 
@@ -223,18 +224,8 @@ Development files for %name.
 export QTDIR=%qt4dir
 export PATH=$QTDIR/bin:$PATH
 
-mkdir build && cd build
-
-cmake -DCMAKE_INSTALL_PREFIX=%_prefix \
-%if %unstable
-      -DCMAKE_BUILD_TYPE=debugfull \
-%endif
-%if "%{_lib}" != "lib"
-      -DLIB_SUFFIX=64 \
-%endif
-        ../
-
-%make VERBOSE=1
+%cmake -DCMAKE_BUILD_TYPE=debugfull
+%make
 
 %install
 cd build
@@ -243,5 +234,3 @@ cd -
 
 %clean
 rm -fr %buildroot
-
-
