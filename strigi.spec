@@ -3,7 +3,7 @@
 
 %define branch 0
 %{?_branch: %{expand: %%global branch 1}}
-%define revision 725465
+%define revision 732630
 
 %if %{unstable}
 %define dont_strip 1
@@ -11,20 +11,18 @@
 
 Name: strigi
 Version: 0.5.7
-Release: %mkrel 1
+Release: %mkrel 1.%revision.1
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
-Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
-BuildRoot:     %{_tmppath}/%{name}-buildroot
+Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-r%{revision}.tar.bz2
+BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
 BuildRequires: bzip2-devel
-# fwang: in fact, recent strigi requires recent clucene, otherwise
-# it does not build
-BuildRequires: clucene-devel >= 0.9.20
+BuildRequires: clucene-devel >= 0.9.16
 BuildRequires: libmagic-devel
 BuildRequires: openssl-devel
 BuildRequires: expat-devel
