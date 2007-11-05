@@ -18,6 +18,7 @@ License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-r%{revision}.tar.bz2
+Patch0: strigi-gcc43.diff
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -30,6 +31,8 @@ BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
 BuildRequires: libexiv-devel
+#fwang: Obsoletes here because cluceneindex has moved to /usr/lib/strigi
+Obsoletes: %mklibname cluceneindex 0
 
 %description
 Here are the main features of Strigi:
@@ -152,25 +155,6 @@ Strigi library.
 
 #--------------------------------------------------------------------
 
-%define libcluceneindex %mklibname cluceneindex 0
-
-%package -n %libcluceneindex
-Summary: Strigi library
-Group: System/Libraries
-Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
-
-%description -n %libcluceneindex
-Strigi library.
-
-%post -n %libcluceneindex -p /sbin/ldconfig
-%postun -n %libcluceneindex -p /sbin/ldconfig
-
-%files -n %libcluceneindex
-%defattr(-,root,root)
-#%{_libdir}/libcluceneindex.so.*
-
-#--------------------------------------------------------------------
-
 %define libstrigiqtdbusclient %mklibname strigiqtdbusclient 0
 
 %package -n %libstrigiqtdbusclient
@@ -195,7 +179,6 @@ Requires: %libstrigihtmlgui
 Requires: %libstrigiqtdbusclient
 Requires: %libsearchclient
 Requires: %libstreamanalyzer
-Requires: %libcluceneindex
 Requires: %libstreams
 Summary: Development files for %name
 Group:  Development/Other
@@ -216,12 +199,10 @@ Development files for %name.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
-export QTDIR=%qt4dir
-export PATH=$QTDIR/bin:$PATH
-
-%cmake -DCMAKE_BUILD_TYPE=debugfull
+%cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
 %make
 
 %install
