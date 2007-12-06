@@ -3,7 +3,7 @@
 
 %define branch 0
 %{?_branch: %{expand: %%global branch 1}}
-%define revision 732630
+%define revision 745576
 
 %if %{unstable}
 %define dont_strip 1
@@ -11,14 +11,13 @@
 
 Name: strigi
 Version: 0.5.7
-Release: %mkrel 1.%revision.2
+Release: %mkrel 1.%revision.1
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-r%{revision}.tar.bz2
-Patch0: strigi-gcc43.diff
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -199,7 +198,6 @@ Development files for %name.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
