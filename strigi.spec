@@ -18,7 +18,6 @@ License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-r%{revision}.tar.bz2
-BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
 BuildRequires: bzip2-devel
