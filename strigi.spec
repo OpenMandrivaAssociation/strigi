@@ -3,15 +3,15 @@
 
 %define branch 0
 %{?_branch: %{expand: %%global branch 1}}
-%define revision 758303
+%define revision 808174
 
 %if %{unstable}
 %define dont_strip 1
 %endif
 
 Name: strigi
-Version: 0.5.7
-Release: %mkrel 1.%revision.1
+Version: 0.5.9
+Release: %mkrel 0.%revision.1
 Epoch: 1
 Summary: Desktop Search
 License: GPL
