@@ -88,8 +88,12 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libsearchclient
 Strigi library.
 
+%if %mdkversion < 200900
 %post -n %libsearchclient -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libsearchclient -p /sbin/ldconfig
+%endif
 
 %files -n %libsearchclient
 %defattr(-,root,root)
@@ -107,8 +111,12 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstreamanalyzer
 Strigi library.
 
+%if %mdkversion < 200900
 %post -n %libstreamanalyzer -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libstreamanalyzer -p /sbin/ldconfig
+%endif
 
 %files -n %libstreamanalyzer
 %defattr(-,root,root)
@@ -126,8 +134,12 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstreams
 Strigi library.
 
+%if %mdkversion < 200900
 %post -n %libstreams -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libstreams -p /sbin/ldconfig
+%endif
 
 %files -n %libstreams
 %defattr(-,root,root)
@@ -145,8 +157,12 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstrigihtmlgui
 Strigi library.
 
+%if %mdkversion < 200900
 %post -n %libstrigihtmlgui -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libstrigihtmlgui -p /sbin/ldconfig
+%endif
 
 %files -n %libstrigihtmlgui
 %defattr(-,root,root)
@@ -164,8 +180,12 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstrigiqtdbusclient
 Strigi library.
 
+%if %mdkversion < 200900
 %post -n %libstrigiqtdbusclient -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libstrigiqtdbusclient -p /sbin/ldconfig
+%endif
 
 %files -n %libstrigiqtdbusclient
 %defattr(-,root,root)
