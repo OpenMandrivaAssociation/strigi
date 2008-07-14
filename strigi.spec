@@ -3,14 +3,14 @@
 
 %define branch 0
 %{?_branch: %{expand: %%global branch 1}}
-%define revision 808174
+%define revision 832233
 
 %if %{unstable}
 %define dont_strip 1
 %endif
 
 Name: strigi
-Version: 0.5.9
+Version: 0.5.10
 Release: %mkrel 0.%revision.1
 Epoch: 1
 Summary: Desktop Search
@@ -221,7 +221,7 @@ Development files for %name.
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
-%make
+make
 
 %install
 cd build
