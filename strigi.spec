@@ -1,23 +1,14 @@
-%define unstable 1
-%{?_unstable: %{expand: %%global unstable 1}}
-
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
 %define revision 832233
-
-%if %{unstable}
-%define dont_strip 1
-%endif
 
 Name: strigi
 Version: 0.5.10
-Release: %mkrel 0.%revision.1
+Release: %mkrel 1
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
-Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.%{revision}.tar.bz2
+Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -30,7 +21,6 @@ BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
 BuildRequires: libexiv-devel
-#fwang: Obsoletes here because cluceneindex has moved to /usr/lib/strigi
 Obsoletes: %mklibname cluceneindex 0
 
 %description
