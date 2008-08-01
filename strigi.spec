@@ -2,13 +2,14 @@
 
 Name: strigi
 Version: 0.5.10
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 Summary: Desktop Search
 License: GPL
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://ovh.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Patch0:        strigi-post-0.5.10-rev836487.patch
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -208,6 +209,7 @@ Development files for %name.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
