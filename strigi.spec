@@ -9,6 +9,7 @@ License: LGPLv2+
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
+Patch0: strigi-post-0.5.11-rev836487.patch
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -208,6 +209,7 @@ Development files for %name.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
