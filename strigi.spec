@@ -1,7 +1,7 @@
-%define svn 872738
+%define svn 895463
 
 Name: strigi
-Version: 0.6.0
+Version: 0.6.1
 Release: %mkrel 0.%svn.1
 Epoch: 1
 Summary: Desktop Search
