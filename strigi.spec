@@ -1,5 +1,5 @@
 Name: strigi
-Version: 0.6.3
+Version: 0.6.4
 Release: %mkrel 1
 Epoch: 1
 Summary: Desktop Search
