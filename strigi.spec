@@ -1,12 +1,13 @@
 Name: strigi
 Version: 0.6.4
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 Summary: Desktop Search
 License: LGPLv2+
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
 Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
+Patch0:        strigi-post-0.6.4.rev949697.patch
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -76,13 +77,6 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libsearchclient
 Strigi library.
 
-%if %mdkversion < 200900
-%post -n %libsearchclient -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libsearchclient -p /sbin/ldconfig
-%endif
-
 %files -n %libsearchclient
 %defattr(-,root,root)
 %{_libdir}/libsearchclient.so.*
@@ -98,13 +92,6 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstreamanalyzer
 Strigi library.
-
-%if %mdkversion < 200900
-%post -n %libstreamanalyzer -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libstreamanalyzer -p /sbin/ldconfig
-%endif
 
 %files -n %libstreamanalyzer
 %defattr(-,root,root)
@@ -122,13 +109,6 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstreams
 Strigi library.
 
-%if %mdkversion < 200900
-%post -n %libstreams -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libstreams -p /sbin/ldconfig
-%endif
-
 %files -n %libstreams
 %defattr(-,root,root)
 %{_libdir}/libstreams.so.*
@@ -145,13 +125,6 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 %description -n %libstrigihtmlgui
 Strigi library.
 
-%if %mdkversion < 200900
-%post -n %libstrigihtmlgui -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libstrigihtmlgui -p /sbin/ldconfig
-%endif
-
 %files -n %libstrigihtmlgui
 %defattr(-,root,root)
 %{_libdir}/libstrigihtmlgui.so.*
@@ -167,13 +140,6 @@ Obsoletes: %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %libstrigiqtdbusclient
 Strigi library.
-
-%if %mdkversion < 200900
-%post -n %libstrigiqtdbusclient -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libstrigiqtdbusclient -p /sbin/ldconfig
-%endif
 
 %files -n %libstrigiqtdbusclient
 %defattr(-,root,root)
@@ -206,6 +172,7 @@ Development files for %name.
 
 %prep
 %setup -q -n %name-%version
+%patch0 -p0
 
 %build
 %cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
