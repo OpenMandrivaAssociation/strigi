@@ -174,7 +174,7 @@ Development files for %name.
 %setup -q -n %name
 
 %build
-%cmake_qt4 -DCMAKE_BUILD_TYPE=debugfull
+%cmake_qt4
 %make
 
 %install
