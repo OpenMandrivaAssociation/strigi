@@ -2,7 +2,7 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define svn 970837
+%define svn 974206
 %endif
 
 Name: strigi
