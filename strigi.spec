@@ -1,23 +1,14 @@
-%define branch 1
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define svn 974206
-%endif
+%define rcv RC1
 
 Name: strigi
-Version: 0.6.95
-Release: %mkrel 0.%svn.1
+Version: 0.7
+Release: %mkrel 0.%{rcv}.1
 Epoch: 1
 Summary: Desktop Search
 License: LGPLv2+
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
-%if %branch
-Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.%{svn}.tar.bz2
-%else
-Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
-%endif
+Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}-%{rcv}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
@@ -181,20 +172,14 @@ Development files for %name.
 #--------------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n %name
-%else
-%setup -q 
-%endif
+%setup -q -n %name-%version-%rcv
 
 %build
 %cmake_qt4
 %make
 
 %install
-cd build
-%makeinstall_std
-cd -
+%makeinstall_std -C build
 
 %clean
 rm -fr %buildroot
