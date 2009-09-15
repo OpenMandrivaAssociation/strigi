@@ -2,7 +2,7 @@
 
 Name: strigi
 Version: 0.7
-Release: %mkrel 0.%{rcv}.2
+Release: %mkrel 0.%{rcv}.3
 Epoch: 1
 Summary: Desktop Search
 License: LGPLv2+
@@ -151,13 +151,13 @@ Strigi library.
 %package devel
 Summary: Development files for %name
 Group:  Development/Other
-Requires: %libstrigihtmlgui = %epoch:%version-release
-Requires: %libstrigiqtdbusclient = %epoch:%version-release
-Requires: %libsearchclient = %epoch:%version-release
-Requires: %libstreamanalyzer = %epoch:%version-release
-Requires: %libstreams = %epoch:%version-release
-Requires: strigi = %epoch:%version-release
-Provides: libstrigi-devel = %epoch:%version-release
+Requires: %libstrigihtmlgui = %epoch:%version-%release
+Requires: %libstrigiqtdbusclient = %epoch:%version-%release
+Requires: %libsearchclient = %epoch:%version-%release
+Requires: %libstreamanalyzer = %epoch:%version-%release
+Requires: %libstreams = %epoch:%version-%release
+Requires: strigi = %epoch:%version-%release
+Provides: libstrigi-devel = %epoch:%version-%release
 Obsoletes: %{_lib}strigi0-devel < 1:0.5.5-1mdv2008.0
 
 %description devel
