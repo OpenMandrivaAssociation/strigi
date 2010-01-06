@@ -1,4 +1,4 @@
-%define svn 1045403
+%define svn 1070828
 
 Name: strigi
 Version: 0.7.0
