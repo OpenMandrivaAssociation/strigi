@@ -1,4 +1,3 @@
-
 Name:          strigi
 Summary:       Desktop Search
 Group:         Graphical desktop/KDE
