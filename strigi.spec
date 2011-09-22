@@ -18,7 +18,6 @@ BuildRequires: attr-devel
 BuildRequires: dbus-devel
 BuildRequires: cppunit-devel
 BuildRequires: libexiv-devel
-Obsoletes:     %mklibname cluceneindex 0
 
 %description
 Here are the main features of Strigi:
@@ -67,7 +66,6 @@ Strigi interface
 %package -n %{libsearchclient}
 Summary:         Strigi library
 Group:           System/Libraries
-Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %{libsearchclient}
 Strigi library.
@@ -82,7 +80,6 @@ Strigi library.
 %package -n %{libstreamanalyzer}
 Summary:         Strigi library
 Group:           System/Libraries
-Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %{libstreamanalyzer}
 Strigi library.
@@ -97,7 +94,6 @@ Strigi library.
 %package -n %{libstreams}
 Summary:         Strigi library
 Group:           System/Libraries
-Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %{libstreams}
 Strigi library.
@@ -112,7 +108,6 @@ Strigi library.
 %package -n %{libstrigihtmlgui}
 Summary:         Strigi library
 Group:           System/Libraries
-Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 
 %description -n %{libstrigihtmlgui}
 Strigi library.
