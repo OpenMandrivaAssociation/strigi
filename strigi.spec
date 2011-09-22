@@ -5,7 +5,7 @@ Group:         Graphical desktop/KDE
 Version:       0.7.5
 Release:       1
 Epoch:         1
-License:	       LGPLv2+
+License:       LGPLv2+
 Url:           http://strigi.sourceforge.net
 Source0:       http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 BuildRequires: cmake >= 2.4.5
@@ -42,7 +42,6 @@ Here are the main features of Strigi:
 
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING
 %{_bindir}/*
 %{_libdir}/strigi/
@@ -60,7 +59,6 @@ Group:           Graphical desktop/KDE
 Strigi interface
 
 %files gui
-%defattr(-,root,root)
 %{_bindir}/strigiclient
 
 #--------------------------------------------------------------------
@@ -76,7 +74,6 @@ Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 Strigi library.
 
 %files -n %{libsearchclient}
-%defattr(-,root,root)
 %{_libdir}/libsearchclient.so.*
 
 #--------------------------------------------------------------------
@@ -92,7 +89,6 @@ Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 Strigi library.
 
 %files -n %{libstreamanalyzer}
-%defattr(-,root,root)
 %{_libdir}/libstreamanalyzer.so.*
 
 #--------------------------------------------------------------------
@@ -108,7 +104,6 @@ Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 Strigi library.
 
 %files -n %{libstreams}
-%defattr(-,root,root)
 %{_libdir}/libstreams.so.*
 
 #--------------------------------------------------------------------
@@ -124,7 +119,6 @@ Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 Strigi library.
 
 %files -n %{libstrigihtmlgui}
-%defattr(-,root,root)
 %{_libdir}/libstrigihtmlgui.so.*
 
 #--------------------------------------------------------------------
@@ -140,7 +134,6 @@ Obsoletes:       %{_lib}strigi0 < 1:0.5.5-1mdv2008.0
 Strigi library.
 
 %files -n %{libstrigiqtdbusclient}
-%defattr(-,root,root)
 %{_libdir}/libstrigiqtdbusclient.so.*
 
 #--------------------------------------------------------------------
@@ -154,14 +147,12 @@ Requires:        %{libsearchclient} = %{epoch}:%{version}-%{release}
 Requires:        %{libstreamanalyzer} = %{epoch}:%{version}-%{release}
 Requires:        %{libstreams} = %{epoch}:%{version}-%{release}
 Requires:        %{name} = %{epoch}:%{version}-%{release}
-Provides:        lib%{name}-devel} = %{epoch}:%{version}-%{release}
-Obsoletes:       %{_lib}strigi0-devel < 1:0.5.5-1mdv2008.0
+Provides:        lib%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description devel
 Development files for %{name}.
 
 %files devel
-%defattr(-,root,root)
 %{_libdir}/lib*/Lib*.cmake
 %{_libdir}/pkgconfig/libstream*.pc
 %{_libdir}/*.so
