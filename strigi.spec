@@ -2,7 +2,7 @@
 
 Name: strigi
 Version: 0.7.6
-Release: 2
+Release: 3
 Epoch: 1
 Summary: Desktop Search
 License: LGPLv2+
