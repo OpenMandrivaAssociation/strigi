@@ -1,20 +1,22 @@
 %define svn 1070828
 
 Name: strigi
-Version: 0.7.6
-Release: 3
+Version: 0.7.7
+Release: 1
 Epoch: 1
 Summary: Desktop Search
 License: LGPLv2+
 Group: Graphical desktop/KDE
 Url: http://strigi.sourceforge.net
-Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
-Patch0:        libstreamanalyzer-0.7.6-sync-to-master.patch
+Source: http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.xz
+Patch0: strigi-0.7.7-ffmpeg-0.11.patch
+Patch1: strigi-0.7.7-missinglink.patch
+Patch2: strigi-0.7.7-glibc-2.15.patch
 BuildRequires: cmake >= 2.4.5
 BuildRequires: qt4-devel >= 4.2.0
 BuildRequires: bzip2-devel
 BuildRequires: clucene-devel >= 0.9.16
-BuildRequires: libmagic-devel
+BuildRequires: magic-devel
 BuildRequires: openssl-devel
 BuildRequires: expat-devel
 BuildRequires: attr-devel
@@ -176,9 +178,10 @@ Development files for %name.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%version
-
-%patch0 -p1
+%setup -q
+%patch0 -p1 -b .ffmpeg11~
+%patch1 -p1 -b .missinglink~
+%patch2 -p1 -b .glibc215~
 
 %build
 %cmake_qt4
