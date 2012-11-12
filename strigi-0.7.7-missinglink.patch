@@ -1,0 +1,6 @@
+--- strigi-0.7.7/libstreamanalyzer/plugins/indexers/clucenengindexer/indexdump/CMakeLists.txt.bero	2012-06-08 17:34:15.490890036 +0200
++++ strigi-0.7.7/libstreamanalyzer/plugins/indexers/clucenengindexer/indexdump/CMakeLists.txt	2012-06-08 17:34:28.232890101 +0200
+@@ -1,2 +1,2 @@
+ add_executable(index2dump indexdump.cpp ../tcharutils.cpp)
+-target_link_libraries(index2dump streamanalyzer ${CLUCENE1_LDFLAGS})
++target_link_libraries(index2dump streamanalyzer ${CLUCENE1_LDFLAGS} clucene-shared)
