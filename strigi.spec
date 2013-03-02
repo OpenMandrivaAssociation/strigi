@@ -155,11 +155,11 @@ Development files for %{name}.
 %{_libdir}/*.so
 %{_includedir}/strigi
 %{_libdir}/pkgconfig/*
-%{_libdir}/LibSearchClient/LibSearchClientConfig.cmake
-%{_libdir}/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
-%{_libdir}/LibStreams/LibStreamsConfig.cmake
-%{_libdir}/LibStreams/LibStreamsTargets.cmake
-%{_libdir}/Libstreams/LibStreamsTargets-noconfig.cmake
+%{_libdir}/cmake/LibSearchClient/LibSearchClientConfig.cmake
+%{_libdir}/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
+%{_libdir}/cmake/LibStreams/LibStreamsConfig.cmake
+%{_libdir}/cmake/LibStreams/LibStreamsTargets.cmake
+%{_libdir}/cmake/Libstreams/LibStreamsTargets-noconfig.cmake
 
 #--------------------------------------------------------------------
 
