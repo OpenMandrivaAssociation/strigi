@@ -157,9 +157,12 @@ Development files for %{name}.
 %{_libdir}/pkgconfig/*
 %{_libdir}/cmake/LibSearchClient/LibSearchClientConfig.cmake
 %{_libdir}/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
+%{_libdir}/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfigVersion.cmake
 %{_libdir}/cmake/LibStreams/LibStreamsConfig.cmake
 %{_libdir}/cmake/LibStreams/LibStreamsTargets.cmake
 %{_libdir}/cmake/LibStreams/LibStreamsTargets-noconfig.cmake
+%{_libdir}/cmake/LibStreams/LibStreamsConfigVersion.cmake
+%{_libdir}/cmake/Strigi
 
 #--------------------------------------------------------------------
 
