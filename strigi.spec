@@ -9,7 +9,6 @@ License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://strigi.sourceforge.net
 Source:		http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
-Patch0:		strigi-0.7.7-ffmpeg-0.11.patch
 Patch1:		strigi-0.7.7-missinglink.patch
 Patch2:		strigi-0.7.7-glibc-2.15.patch
 BuildRequires:	cmake
@@ -23,7 +22,6 @@ BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(exiv2)
-BuildRequires:	boost-devel
 BuildRequires:	ffmpeg-devel
 Obsoletes:	%{mklibname cluceneindex 0} < 0.7.7-2
 
