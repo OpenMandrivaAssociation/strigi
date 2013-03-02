@@ -159,7 +159,7 @@ Development files for %{name}.
 %{_libdir}/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
 %{_libdir}/cmake/LibStreams/LibStreamsConfig.cmake
 %{_libdir}/cmake/LibStreams/LibStreamsTargets.cmake
-%{_libdir}/cmake/Libstreams/LibStreamsTargets-noconfig.cmake
+%{_libdir}/cmake/LibStreams/LibStreamsTargets-noconfig.cmake
 
 #--------------------------------------------------------------------
 
