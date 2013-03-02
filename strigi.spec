@@ -10,7 +10,6 @@ Group:		Graphical desktop/KDE
 Url:		http://strigi.sourceforge.net
 Source:		http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 Patch1:		strigi-0.7.7-missinglink.patch
-Patch2:		strigi-0.7.7-glibc-2.15.patch
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	bzip2-devel
@@ -166,9 +165,7 @@ Development files for %{name}.
 
 %prep
 %setup -q
-%patch0 -p1 -b .ffmpeg11~
 %patch1 -p1 -b .missinglink~
-%patch2 -p1 -b .glibc215~
 
 %build
 %cmake_qt4
