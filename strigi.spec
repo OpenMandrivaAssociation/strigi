@@ -168,7 +168,7 @@ Development files for %{name}.
 %patch1 -p1 -b .missinglink~
 
 %build
-%cmake_qt4
+%cmake_qt4 -DCMAKE_INSTALL_LIBDIR=%{_lib}
 %make
 
 %install
