@@ -1,14 +1,14 @@
 %define svn 1070828
 
 Name:		strigi
-Version:	0.7.7
+Version:	0.7.8
 Release:	4
 Epoch:		1
 Summary:	Desktop Search
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://strigi.sourceforge.net
-Source:		http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.xz
+Source:		http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 Patch0:		strigi-0.7.7-ffmpeg-0.11.patch
 Patch1:		strigi-0.7.7-missinglink.patch
 Patch2:		strigi-0.7.7-glibc-2.15.patch
