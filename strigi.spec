@@ -2,13 +2,13 @@
 
 Name:		strigi
 Version:	0.7.8
-Release:	4
+Release:	5
 Epoch:		1
 Summary:	Desktop Search
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://strigi.sourceforge.net
-Source:		http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
+Source0:	http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 Patch1:		strigi-0.7.7-missinglink.patch
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
