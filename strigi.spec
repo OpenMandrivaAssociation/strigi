@@ -1,7 +1,7 @@
 Summary:	Desktop Search
 Name:		strigi
 Version:	0.7.8
-Release:	14
+Release:	15
 Epoch:		1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
