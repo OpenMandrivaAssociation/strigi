@@ -1,7 +1,7 @@
 Summary:	Desktop Search
 Name:		strigi
 Version:	0.7.8
-Release:	12
+Release:	12.1
 Epoch:		1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
@@ -11,7 +11,7 @@ Patch0:		strigi-0.7.7-missinglink.patch
 BuildRequires:	cmake
 BuildRequires:	attr-devel
 BuildRequires:	bzip2-devel
-BuildRequires:	ffmpeg-devel
+BuildRequires:	ffmpeg-devel >= 2.5.4
 BuildRequires:	magic-devel
 BuildRequires:	qt4-devel
 BuildRequires:	pkgconfig(cppunit)
