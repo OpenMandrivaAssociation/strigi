@@ -1,0 +1,23 @@
+--- strigi-0.7.8/CMakeLists.txt.omv~	2017-06-21 00:30:33.149539115 +0200
++++ strigi-0.7.8/CMakeLists.txt	2017-06-21 00:31:48.823758338 +0200
+@@ -55,6 +55,9 @@ if(MSVC)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Zc:wchar_t-")
+ endif(MSVC)
+ 
++# make cppunit happy
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
++
+ if(showError)
+   message(FATAL_ERROR "No CMakeLists.txt was found in one of your sources subdirectory\n"
+                       "Make sure you downloaded the sub-modules files using:\n"
+--- strigi-0.7.8/libstreamanalyzer/plugins/indexers/clucenengindexer/cluceneindexreader.cpp.omv~	2017-06-21 00:32:38.443590868 +0200
++++ strigi-0.7.8/libstreamanalyzer/plugins/indexers/clucenengindexer/cluceneindexreader.cpp	2017-06-21 00:34:08.831464533 +0200
+@@ -322,7 +322,7 @@ CLuceneIndexReader::Private::addField(lu
+         doc.size = atoi(size.c_str());
+     } else {
+         doc.properties.insert(make_pair<const string, string>(
+-            wchartoutf8(name), value));
++            wchartoutf8(name), (string)value));
+     }
+ }
+ Variant

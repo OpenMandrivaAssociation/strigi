@@ -9,6 +9,7 @@ Url:		http://strigi.sourceforge.net
 Source0:	http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 Patch0:		strigi-0.7.7-missinglink.patch
 Patch1:		strigi_ffmpeg-2.9.patch
+Patch2:		strigi-0.7.8-compile.patch
 BuildRequires:	cmake
 BuildRequires:	attr-devel
 BuildRequires:	bzip2-devel
