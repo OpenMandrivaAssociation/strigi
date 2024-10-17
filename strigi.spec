@@ -5,7 +5,7 @@ Release:	26
 Epoch:		1
 License:	LGPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://strigi.sourceforge.net
+Url:		https://strigi.sourceforge.net
 Source0:	http://www.vandenoever.info/software/strigi/%{name}-%{version}.tar.bz2
 Patch0:		strigi-0.7.7-missinglink.patch
 Patch1:		strigi_ffmpeg-2.9.patch
